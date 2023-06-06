@@ -1,14 +1,15 @@
 name: Deploy App
 on:
-  pull_request:
-    types: [opened, synchronize]
-  workflow_dispatch:
-  push:
-    branches:
-      - main
-      - activity_branch
-    paths-ignore:
-      - ".github/workflows/*"
+  push
+  # pull_request:
+  #   types: [opened, synchronize]
+  # workflow_dispatch:
+  # push:
+  #   branches:
+  #     - main
+  #     - activity_branch
+  #   paths-ignore:
+  #     - ".github/workflows/*"
 
 # jobs:
 #   push_deploy:
@@ -22,6 +23,18 @@ on:
 #           ls -lart
 
 jobs:
+  uploading_artifacts:
+    runs-on: ubuntu-latest
+    steps:
+      - name: make a new file
+        run: |
+          touch new_file
+          echo "this will be uploaded" > new_file
+      - name: Upload an artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: upload_files
+          path: new_file
   deploy_container:
     runs-on: ubuntu-latest
     steps:
