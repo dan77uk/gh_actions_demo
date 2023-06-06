@@ -35,7 +35,7 @@ jobs:
         with:
           name: upload_files
           # path: new_file
-          path: /home/runner/work/GitHub_Actions/GitHub_Actions/new_file
+          path: /home/runner/work/gh_actions_demo/GitHub_Actions/new_file
   deploy_container:
     runs-on: ubuntu-latest
     steps:
