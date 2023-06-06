@@ -1,5 +1,8 @@
 name: Deploy App
-on: [push, workflow_dispatch]
+on:
+  pull_request:
+    types: [opened, synchronize]
+  workflow_dispatch:
 
 # jobs:
 #   push_deploy:
