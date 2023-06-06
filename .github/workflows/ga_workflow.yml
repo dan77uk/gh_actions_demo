@@ -45,3 +45,8 @@ jobs:
     steps:
       - name: Deploy a container to a cloud provider
         run: echo "Deploying...for the third time"
+  show_info:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Output 'github' Context
+        run: echo "${{toJSON(github)}}"
