@@ -7,6 +7,8 @@ on:
     branches:
       - main
       - activity_branch
+    paths-ignore:
+      - ".github/workflows/*"
 
 # jobs:
 #   push_deploy:
