@@ -33,3 +33,9 @@ jobs:
     steps:
       - name: Deploy a container to a cloud provider
         run: echo "Deploying..."
+  second_deploy_web_app:
+    needs: [deploy_container]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy a container to a cloud provider
+        run: echo "Deploying...again"
