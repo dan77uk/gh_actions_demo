@@ -28,6 +28,7 @@ jobs:
     steps:
       - name: make a new file
         run: |
+          pwd
           touch new_file
           echo "this will be uploaded" > new_file
       - name: Upload an artifact
@@ -35,7 +36,7 @@ jobs:
         with:
           name: upload_files
           # path: new_file
-          path: /home/runner/work/gh_actions_demo/GitHub_Actions/new_file
+          path: /home/runner/work/GitHub_Actions/GitHub_Actions/new_file
   deploy_container:
     runs-on: ubuntu-latest
     steps:
